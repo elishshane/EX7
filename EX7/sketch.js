@@ -46,7 +46,11 @@ function draw() {
   
 }
 
-function Quote(x, y, txt, font, color){
+function Quote(x, y, txt, font, color){//create class for string
+  // x = x position of x string
+  //y = y position of y string
+  //font = typeface
+  //color = color of typeface
   this.position = createVector(x, y);
   this.velocity = createVector();
   this.accel = createVector(0, 1);
@@ -55,7 +59,7 @@ function Quote(x, y, txt, font, color){
   this.color = color;
 }
 
-Quote.prototype.drop = function(){
+Quote.prototype.drop = function(){//droping stirng
   this.velocity.add(this.accel);
   this.position.add(this.velocity);
   if( this.position.y > height - 210 ){
@@ -64,12 +68,12 @@ Quote.prototype.drop = function(){
   }
 }
 
-Quote.prototype.display = function(){
+Quote.prototype.display = function(){//displaying quote
   fill(this.color);
   textFont( this.font, 100);
   text( this.txt, this.position.x, this.position.y );
 }
 
-Quote.prototype.slide = function(){
+Quote.prototype.slide = function(){//sliding quote
   this.position.x = this.position.x - 3;
 }
