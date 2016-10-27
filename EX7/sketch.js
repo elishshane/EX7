@@ -4,6 +4,7 @@ var img;
 
 var string = "I dunno who U R"
 var string2 = "U Dunno who I am"
+var string3 = "Good luck in Season 7"
 var imgScale = 0.1;
 
 function preload(){
@@ -18,7 +19,7 @@ function setup() {
   
   quote = new Quote( 10, 50, string, rs, [255, 0, 0]);
   quote2 = new Quote( 500, 500, string2, rh, [ 0, 0, 255]);
-  
+  quote3 = new Quote( 100, -300, string3, rs, [0]);
 }
 
 function draw() {
@@ -36,6 +37,7 @@ function draw() {
       imgScale = imgScale + 0.001;
       if(imgScale > 0.35){
         imgScale = 0.35;
+        quote3.display();
       }
       
       
